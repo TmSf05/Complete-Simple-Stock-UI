@@ -1,0 +1,390 @@
+   import 'package:flutter/material.dart';
+
+  void main() {
+    runApp(const MyApp());
+  }
+
+  class MyApp extends StatelessWidget {
+    const MyApp({super.key});
+
+    @override
+    Widget build(BuildContext context) {
+      return MaterialApp(
+        title: 'Flutter Demo',
+        theme: ThemeData(
+          primarySwatch: Colors.blue,
+        ),
+        home: const MyHomePage(title: 'Community Page'),
+      );
+    }
+  }
+
+  class MyHomePage extends StatefulWidget {
+    const MyHomePage({super.key, required this.title});
+
+    final String title;
+
+    @override
+    State<MyHomePage> createState() => _MyHomePageState();
+  }
+
+  class _MyHomePageState extends State<MyHomePage> {
+    int counter = 0;
+
+    void incrementCounter() {
+      setState(() {
+        counter++;
+      });
+    }
+
+    @override
+    Widget build(BuildContext context) {
+      return Scaffold(
+        appBar: AppBar(
+          title: Text(widget.title),
+          backgroundColor: const Color.fromARGB(2165, 42, 42, 41),
+        ),
+        body: SafeArea(
+            child: SingleChildScrollView(
+              child: Padding(
+                    padding: const EdgeInsets.all(270),
+                    child: Column(
+              children: [
+                const SizedBox(height: 50),
+                Row(
+                   mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    // ignore: sized_box_for_whitespace
+                    Container(
+                      height: 40,
+                      width: 40,
+                      child: const Icon(
+                        Icons.arrow_back,
+                        size: 30,
+                      ),
+                    ),
+                    const SizedBox(width: 150),
+                    const Text(
+                      'Community',
+                      style: TextStyle(fontWeight: FontWeight.bold, fontSize: 25),textAlign: TextAlign.center
+                    )
+                  ],
+                ),
+                const SizedBox(height: 30),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  // ignore: prefer_const_literals_to_create_immutables
+                  children: [
+                   const Text('Learn Stock,\nEducate the World',
+                   style: TextStyle(fontWeight:FontWeight.bold, fontSize: 30, color: Color.fromARGB(255, 2, 23, 41)),textAlign: TextAlign.center,
+                   ) 
+                  ],
+                ),
+               const SizedBox(height: 30),
+                         Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      Container(
+                        decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(12),
+                        color: const Color(0xFFeceffe),
+                        border: Border.all(
+                          color:const Color.fromARGB(69, 0, 0, 0),
+                          width: .5,
+                        )
+                        ),
+                        height: 70,
+                        width: 585,      
+                         child: Row(
+                        // ignore: prefer_const_literals_to_create_immutables
+                        children: [
+                          const SizedBox(width: 170),
+                          const Icon(Icons.search, size: 50, color: Color.fromARGB(164, 0, 0, 0),),
+                          const SizedBox(width: 20),
+                          const Text('Search Something...', style: TextStyle(color: Color.fromARGB(82, 0, 0, 0)),),      
+                          ],
+                        ),     
+
+                      ),
+                    ],
+                  ), 
+                  const SizedBox(height: 30),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Container(
+                        decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(12),
+                        color: const Color(0xFFeceffe),
+                        border: Border.all(
+                          color:const Color.fromARGB(69, 0, 0, 0),
+                          width: .5,
+                        )
+                        ),
+                        height: 200,
+                        width: 585,
+                        padding: const EdgeInsets.all(16.0), 
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [ 
+                          const Text('How to start investing investing in uStock', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 25, color: Color.fromARGB(158, 0, 0, 0))),
+                          const SizedBox(height: 10),
+                          const Text('Lemme tell you this, world of interesting is really\nreally legit, especially using uStock. Why? Becaus...', style: TextStyle( fontSize: 22, color: Color.fromARGB(76, 0, 0, 0))),
+                          const SizedBox(height: 15),
+
+                          Row(children: [
+                                    Container(
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(8),
+                          image: const DecorationImage(
+                            fit: BoxFit.cover,
+                            image: NetworkImage('https://thumbs.dreamstime.com/b/shocked-young-business-woman-using-laptop-looking-you-camera-blown-away-stupor-standing-yellow-background-human-face-171616270.jpg')
+                          ),
+                          color: Colors.blue,
+                        ),
+                        height: 50,
+                        width: 50
+                      ),
+                      const SizedBox(width: 10),
+                      Container(
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(8),
+                          image: const DecorationImage(
+                            fit: BoxFit.cover,
+                            image: NetworkImage('https://static.vecteezy.com/system/resources/thumbnails/007/907/812/small_2x/indoor-shot-of-handsome-caucasian-man-smiles-toothily-dressed-in-hoodie-and-black-jacket-has-cheerful-calm-face-expression-enjoys-pleasant-talk-poses-against-pink-background-human-face-expressions-photo.jpg')
+                          ),
+                          color: Colors.blue,
+                        ),
+                        height: 50,
+                        width: 50
+                      ),
+                      const SizedBox(width: 10),
+                      Container(
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(8),
+                          image: const DecorationImage(
+                            fit: BoxFit.cover,
+                            image: NetworkImage('https://st3.depositphotos.com/3917667/18493/i/450/depositphotos_184936594-stock-photo-suspiciont-doubtful-pensive-woman-with.jpg')
+                          ),
+                          color: Colors.blue,
+                        ),
+                        height: 50,
+                        width: 50
+                      ),
+                      const SizedBox(width: 10),
+                      Container(
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(8),
+                          color: const Color.fromARGB(174, 255, 255, 255),
+                          border: Border.all(
+                            width: .5,
+                            color: Colors.black
+                          )
+                        ),
+                        height: 50,
+                        width: 50,
+                        child: const Center(child: 
+                        Text('+69')
+                        ),
+                      ),
+                      const SizedBox(width: 10),
+                      Expanded(child: Container()),
+                      const Text('Join Forum', style: TextStyle( color: Color.fromARGB(158, 2, 53, 194)),),
+                      const Icon(Icons.play_arrow, color: Color.fromARGB(158, 2, 53, 194),),
+                      const SizedBox(width: 15)
+
+                          ],
+
+                          ),
+                        ],
+                        ) 
+                      )
+                    ],
+                  ), 
+                  const SizedBox(height: 30),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Container(
+                        decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(12),
+                        color: const Color(0xFFeceffe),
+                        border: Border.all(
+                          color:const Color.fromARGB(69, 0, 0, 0),
+                          width: .5,
+                        )
+                        ),
+                        height: 200,
+                        width: 585,
+                        padding: const EdgeInsets.all(16.0), 
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [ 
+                          const Text('How to Predict the Candlestick', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 25, color: Color.fromARGB(158, 0, 0, 0))),
+                          const SizedBox(height: 10),
+                          const Text('What is candelestick? It\'s like candle but not actually sweat candle, it\'s some benchmark to yo...', style: TextStyle( fontSize: 22, color: Color.fromARGB(76, 0, 0, 0))),
+                          const SizedBox(height: 15),
+                          Row(children: [ Container(
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(8),
+                          image: const DecorationImage(
+                            fit: BoxFit.cover,
+                            image: NetworkImage('https://st3.depositphotos.com/3917667/18493/i/450/depositphotos_184936594-stock-photo-suspiciont-doubtful-pensive-woman-with.jpg')
+                          ),
+                          color: Colors.blue,
+                        ),
+                        height: 50,
+                        width: 50
+                      ),
+                      const SizedBox(width: 10),
+                      Container(
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(8),
+                          image: const DecorationImage(
+                            fit: BoxFit.cover,
+                            image: NetworkImage('https://thumbs.dreamstime.com/b/shocked-young-business-woman-using-laptop-looking-you-camera-blown-away-stupor-standing-yellow-background-human-face-171616270.jpg')
+                          ),
+                          color: Colors.blue,
+                        ),
+                        height: 50,
+                        width: 50
+                      ),
+                      const SizedBox(width: 10),
+                      Container(
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(8),
+                          image: const DecorationImage(
+                            fit: BoxFit.cover,
+                            image: NetworkImage('https://static.vecteezy.com/system/resources/thumbnails/007/907/812/small_2x/indoor-shot-of-handsome-caucasian-man-smiles-toothily-dressed-in-hoodie-and-black-jacket-has-cheerful-calm-face-expression-enjoys-pleasant-talk-poses-against-pink-background-human-face-expressions-photo.jpg')
+                          ),
+                          color: Colors.blue,
+                        ),
+                        height: 50,
+                        width: 50
+                      ),
+                      const SizedBox(width: 10),
+                      Container(
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(8),
+                          color: const Color.fromARGB(174, 255, 255, 255),
+                          border: Border.all(
+                            width: .5,
+                            color: Colors.black
+                          )
+                        ),
+                        height: 50,
+                        width: 50,
+                        child: const Center(child: 
+                        Text('+69')
+                        ),
+                      ),
+                      const SizedBox(width: 10),
+                      Expanded(child: Container()),
+                      const Text('Join Forum', style: TextStyle( color: Color.fromARGB(158, 2, 53, 194)),),
+                      const Icon(Icons.play_arrow, color: Color.fromARGB(158, 2, 53, 194),),
+                      const SizedBox(width: 15)
+                          ],
+                          ),
+                        ],) 
+                      )
+                    ],
+                  ),
+                  const SizedBox(height: 30),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Container(
+                        decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(12),
+                        color: const Color(0xFFeceffe),
+                        border: Border.all(
+                          color:const Color.fromARGB(69, 0, 0, 0),
+                          width: .5,
+                        )
+                        ),
+                        height: 200,
+                        width: 585,
+                        padding: const EdgeInsets.all(16.0), 
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [ 
+                          const Text('Is Trading Safe for Newbie Investor?', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 25, color: Color.fromARGB(158, 0, 0, 0))),
+                          const SizedBox(height: 10),
+                          const Text('Many people ask us about trading in uStock is trading safe for you if you\'re a newbie player in uSt...', style: TextStyle( fontSize: 22, color: Color.fromARGB(76, 0, 0, 0))),
+                          const SizedBox(height: 15)
+                          Row(children: [ Container(
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(8),
+                          image: const DecorationImage(
+                            fit: BoxFit.cover,
+                            image: NetworkImage('https://static.vecteezy.com/system/resources/thumbnails/007/907/812/small_2x/indoor-shot-of-handsome-caucasian-man-smiles-toothily-dressed-in-hoodie-and-black-jacket-has-cheerful-calm-face-expression-enjoys-pleasant-talk-poses-against-pink-background-human-face-expressions-photo.jpg')
+                          ),
+                          color: Colors.blue,
+                        ),
+                        height: 50,
+                        width: 50
+                      ),
+                      const SizedBox(width: 10),
+                      Container(
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(8),
+                          image: const DecorationImage(
+                            fit: BoxFit.cover,
+                            image: NetworkImage('https://thumbs.dreamstime.com/b/shocked-young-business-woman-using-laptop-looking-you-camera-blown-away-stupor-standing-yellow-background-human-face-171616270.jpg')
+                          ),
+                          color: Colors.blue,
+                        ),
+                        height: 50,
+                        width: 50
+                      ),
+                      const SizedBox(width: 10),
+                      Container(
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(8),
+                          image: const DecorationImage(
+                            fit: BoxFit.cover,
+                            image: NetworkImage('https://st3.depositphotos.com/3917667/18493/i/450/depositphotos_184936594-stock-photo-suspiciont-doubtful-pensive-woman-with.jpg')
+                          ),
+                          color: Colors.blue,
+                        ),
+                        height: 50,
+                        width: 50
+                      ),
+                      const SizedBox(width: 10),
+                      Container(
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(8),
+                          color: const Color.fromARGB(174, 255, 255, 255),
+                          border: Border.all(
+                            width: .5,
+                            color: Colors.black
+                          )
+                        ),
+                        height: 50,
+                        width: 50,
+                        child: const Center(child: 
+                        Text('+69')
+                        ),
+                      ),
+                      const SizedBox(width: 10),
+                      Expanded(child: Container()),
+                      const Text('Join Forum', style: TextStyle( color: Color.fromARGB(158, 2, 53, 194)),),
+                      const Icon(Icons.play_arrow, color: Color.fromARGB(158, 2, 53, 194),),
+                      const SizedBox(width: 15)
+                              ],
+                            ),
+                          ],
+                        ) 
+                      )
+
+                    ],
+                  )
+
+                ],
+              ),
+            ),
+          )
+        ),
+      );
+    }
+  }
