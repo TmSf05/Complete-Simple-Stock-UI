@@ -1,0 +1,373 @@
+import 'package:flutter/material.dart';
+
+void main() => runApp(MyApp());
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Flutter Demo',
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+      ),
+      home: const MyHomePage(title: 'Personal Data Page'),
+    );
+  }
+}
+
+class MyHomePage extends StatefulWidget {
+  final String title;
+
+  const MyHomePage({
+    Key? key,
+    required this.title,
+  }) : super(key: key);
+
+  @override
+  State<MyHomePage> createState() => _MyHomePageState();
+}
+
+class _MyHomePageState extends State<MyHomePage> {
+  int _counter = 0;
+
+  void _incrementCounter() {
+    setState(() {
+      _counter++;
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(widget.title),
+      ),
+      body: SafeArea(
+        child: Padding(
+          padding: const EdgeInsets.all(30),
+          child: Column(
+            children: [
+              const SizedBox(height: 10),
+              Row(children: [
+                // ignore: sized_box_for_whitespace
+                Container(
+                  height: 40,
+                  width: 40,
+                  child: const Icon(
+                    Icons.arrow_back,
+                    size: 30,
+                  ),
+                ),
+                const SizedBox(width: 190),
+                const Text(
+                  'Personal Data',
+                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15),
+                ),
+              ]),
+              Center(
+                child: Stack(
+                  children: [
+                    Container(
+                      width: 130,
+                      height: 130,
+                      decoration: BoxDecoration(
+                          border: Border.all(
+                              width: 4,
+                              color: Theme.of(context).scaffoldBackgroundColor),
+                          boxShadow: [
+                            BoxShadow(
+                                spreadRadius: 2,
+                                blurRadius: 10,
+                                color: Colors.black.withOpacity(0.1),
+                                offset: const Offset(0, 10))
+                          ],
+                          shape: BoxShape.rectangle,
+                          image: const DecorationImage(
+                              fit: BoxFit.cover,
+                              image: NetworkImage(
+                                'https://tse2.mm.bing.net/th?id=OIP.fqLBpB0aDhJn0AQreNqTxAHaHa&pid=Api&P=0',
+                              ))),
+                    ),
+                    Positioned(
+                        bottom: 0,
+                        right: 0,
+                        child: Container(
+                          height: 40,
+                          width: 40,
+                          decoration: BoxDecoration(
+                            shape: BoxShape.rectangle,
+                            border: Border.all(
+                              width: 4,
+                              color: Theme.of(context).scaffoldBackgroundColor,
+                            ),
+                            color: Colors.green,
+                          ),
+                          child: const Icon(
+                            Icons.photo_camera,
+                            color: Colors.white,
+                          ),
+                        )),
+                  ],
+                ),
+              ),
+              Row(
+                children: const [
+                  SizedBox(width: 40),
+                  Text(
+                    'Your Name',
+                    style: TextStyle(
+                      fontWeight: FontWeight.normal,
+                      fontSize: 20,
+                      color: Color.fromARGB(186, 0, 0, 0),
+                    ),
+                  ),
+                ],
+              ),
+              const SizedBox(height: 14),
+              Row(
+                children: [
+                  const SizedBox(width: 40),
+                  Container(
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(5),
+                        border: Border.all(
+                            width: .5,
+                            color: const Color.fromARGB(78, 0, 0, 0)),
+                        color: const Color(0xffeceffe),
+                      ),
+                      height: 60,
+                      width: 540,
+                      child: Row(
+                        // ignore: prefer_const_literals_to_create_immutables
+                        children: [
+                          const SizedBox(width: 10),
+                          const Text(
+                            'Margarette nick Malk',
+                            style: TextStyle(
+                              fontSize: 18,
+                              color: Color.fromARGB(255, 0, 0, 0),
+                            ),
+                          ),
+                        ],
+                      )),
+                ],
+              ),
+              const SizedBox(height: 30),
+              Row(
+                children: const [
+                  SizedBox(width: 40),
+                  Text(
+                    'Date of Birth',
+                    style: TextStyle(
+                      fontWeight: FontWeight.normal,
+                      fontSize: 20,
+                      color: Color.fromARGB(186, 0, 0, 0),
+                    ),
+                  ),
+                ],
+              ),
+              const SizedBox(height: 14),
+              Row(
+                children: [
+                  const SizedBox(width: 40),
+                  Container(
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(5),
+                        border: Border.all(
+                            width: .5,
+                            color: const Color.fromARGB(78, 0, 0, 0)),
+                        color: const Color(0xffeceffe),
+                      ),
+                      height: 60,
+                      width: 540,
+                      child: Row(
+                        // ignore: prefer_const_literals_to_create_immutables
+                        children: [
+                          const SizedBox(width: 10),
+                          const Expanded(
+                            child: Text(
+                              '24 December 1999',
+                              style: TextStyle(
+                                fontSize: 18,
+                                color: Color.fromARGB(255, 0, 0, 0),
+                              ),
+                            ),
+                          ),
+                          const Icon(Icons.expand_more),
+                          const SizedBox(width: 10),
+                        ],
+                      )),
+                ],
+              ),
+              const SizedBox(height: 30),
+              Row(
+                children: const [
+                  SizedBox(width: 40),
+                  Text(
+                    'Your Job',
+                    style: TextStyle(
+                      fontWeight: FontWeight.normal,
+                      fontSize: 20,
+                      color: Color.fromARGB(186, 0, 0, 0),
+                    ),
+                  ),
+                ],
+              ),
+              const SizedBox(height: 14),
+              Row(
+                children: [
+                  const SizedBox(width: 40),
+                  Container(
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(5),
+                        border: Border.all(
+                            width: .5,
+                            color: const Color.fromARGB(78, 0, 0, 0)),
+                        color: const Color(0xffeceffe),
+                      ),
+                      height: 60,
+                      width: 540,
+                      child: Row(
+                        // ignore: prefer_const_literals_to_create_immutables
+                        children: [
+                          const SizedBox(width: 10),
+                          const Text(
+                            'Successor Designer',
+                            style: TextStyle(
+                              fontSize: 18,
+                              color: Color.fromARGB(255, 0, 0, 0),
+                            ),
+                          ),
+                        ],
+                      )),
+                ],
+              ),
+              const SizedBox(height: 30),
+              Row(
+                children: const [
+                  SizedBox(width: 40),
+                  Text(
+                    'Monthly Income',
+                    style: TextStyle(
+                      fontWeight: FontWeight.normal,
+                      fontSize: 20,
+                      color: Color.fromARGB(186, 0, 0, 0),
+                    ),
+                  ),
+                ],
+              ),
+              const SizedBox(height: 14),
+              Row(
+                children: [
+                  const SizedBox(width: 40),
+                  Container(
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(5),
+                        border: Border.all(
+                            width: .5,
+                            color: const Color.fromARGB(78, 0, 0, 0)),
+                        color: const Color(0xffeceffe),
+                      ),
+                      height: 60,
+                      width: 540,
+                      child: Row(
+                        // ignore: prefer_const_literals_to_create_immutables
+                        children: [
+                          const SizedBox(width: 10),
+                          const Expanded(
+                            child: Text(
+                              '\$500 - \$3000 / year',
+                              style: TextStyle(
+                                fontSize: 18,
+                                color: Color.fromARGB(255, 0, 0, 0),
+                              ),
+                            ),
+                          ),
+                          const Icon(Icons.expand_more),
+                          const SizedBox(width: 10),
+                        ],
+                      )),
+                ],
+              ),
+              const SizedBox(height: 30),
+              Row(
+                children: const [
+                  SizedBox(width: 40),
+                  Text(
+                    'Gender',
+                    style: TextStyle(
+                      fontWeight: FontWeight.normal,
+                      fontSize: 20,
+                      color: Color.fromARGB(186, 0, 0, 0),
+                    ),
+                  ),
+                ],
+              ),
+              const SizedBox(height: 14),
+              Row(
+                children: [
+                  const SizedBox(width: 40),
+                  Container(
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(5),
+                      border: Border.all(
+                          width: .5, color: const Color.fromARGB(78, 0, 0, 0)),
+                      color: const Color(0xffeceffe),
+                    ),
+                    height: 60,
+                    width: 250,
+                    child: Row(
+                      // ignore: prefer_const_literals_to_create_immutables
+                      children: [
+                        const SizedBox(width: 10),
+                        const Icon(
+                          Icons.radio_button_unchecked,
+                          color: Color.fromARGB(255, 5, 89, 158),
+                        ),
+                        const SizedBox(width: 10),
+                        const Text(
+                          'Male',
+                          style: TextStyle(
+                            fontSize: 18,
+                            color: Color.fromARGB(255, 0, 0, 0),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  const SizedBox(width: 14),
+                  Container(
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(5),
+                        border: Border.all(
+                            width: .5,
+                            color: const Color.fromARGB(78, 0, 0, 0)),
+                        color: const Color(0xffeceffe),
+                      ),
+                      height: 60,
+                      width: 250,
+                      child: Row(
+                        // ignore: prefer_const_literals_to_create_immutables
+                        children: [
+                          const SizedBox(width: 10),
+                          const Icon(Icons.radio_button_checked),
+                          const SizedBox(width: 10),
+                          const Text(
+                            'Female',
+                            style: TextStyle(
+                              fontSize: 18,
+                              color: Color.fromARGB(255, 0, 0, 0),
+                            ),
+                          ),
+                        ],
+                      )),
+                ],
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
